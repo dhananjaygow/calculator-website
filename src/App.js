@@ -46,6 +46,8 @@ export default function WonderfulCalculator() {
     playSound(600, 100);
     try {
       const fullEquation = equation + display;
+      // eslint-disable-next-line
+      const result = eval(input);
       const result = eval(fullEquation.replace(/×/g, '*').replace(/÷/g, '/'));
       setDisplay(result.toString());
       setEquation('');

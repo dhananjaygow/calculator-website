@@ -42,13 +42,13 @@ export default function WonderfulCalculator() {
     setDisplay('0');
   };
 
-  const handleEquals = () => {
+const handleEquals = () => {
     playSound(600, 100);
     try {
       const fullEquation = equation + display;
       // eslint-disable-next-line
-      const result = eval(input);
       const result = eval(fullEquation.replace(/×/g, '*').replace(/÷/g, '/'));
+      
       setDisplay(result.toString());
       setEquation('');
     } catch (e) {
